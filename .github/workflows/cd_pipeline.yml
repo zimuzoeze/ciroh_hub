@@ -74,7 +74,7 @@ jobs:
       - name: GitHub Pages deployment
         uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
-          token: ${{ secrets.SECRET_TO_PUSH_TO_CIROH_GITHUB_IO }}
+          token: ${{ secrets.CIROH_GITHUB_TOKEN }}
           branch: main
           folder: build
           repository-name: ${{ env.TARGET_REPO }}
