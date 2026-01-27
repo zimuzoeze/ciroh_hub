@@ -1,4 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const baseUrl = "/";
 
@@ -10,8 +13,17 @@ const config = {
   url: "http://ciroh.org",
   baseUrl: baseUrl,
   onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/logos/docuhub.png",
+
+  customFields: {
+    apiBaseUrl:
+      process.env.REACT_APP_API_BASE_URL ||
+      process.env.VITE_API_BASE_URL ||
+      'https://67h5z9ih7j.execute-api.us-east-1.amazonaws.com/default',
+    onBrokenMarkdownLinks: "warn",
+    onBrokenMarkdownImages: "warn",
+    githubProjectToken: process.env.GITHUB_PROJECT_TOKEN,    
+  },
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -334,8 +346,22 @@ const config = {
           </a>
         `
       },
-    ],
 
+    ],
+    zotero_api_key: process.env.ZOTERO_API_KEY || "dummy",
+    zotero_group_id: process.env.ZOTERO_CIROH_GROUP_ID,
+    captcha_key: process.env.CAPTCHA_KEY || "dummy",
+    s3_bucket: process.env.S3_BUCKET_NAME,
+    s3_access_key: process.env.S3_ACCESS_KEY,
+    s3_secret_key: process.env.S3_SECRET_KEY,
+    s3_region: process.env.S3_REGION,
+    hs_client_id: process.env.HS_CLIENT_ID || "dummy",
+    hs_scopes: ['read', 'write'],
+    hs_authorize_url: "https://www.hydroshare.org/o/authorize/",
+    hs_token_url: "https://www.hydroshare.org/o/token/",
+    hs_redirect_uri: "https://portal.ciroh.org/contribute",
+    hs_logout_endpoint: "https://www.hydroshare.org/accounts/logout/",
+    hs_logout_redirect: "https://portal.ciroh.org/contribute",
     // URL for submitting a new product request (used in ProductCards component)
     productIssueUrl: "https://github.com/CIROH-UA/ciroh-ua_website/issues/new?template=product-request.md",
 
@@ -385,42 +411,43 @@ const config = {
         },
         items: [
           {
-            label: "About CIROH",
-            position: "left",
-            items: [
-              {
-                type: "doc",
-                docId: "policies/intro",
-                label: "Policies",
-              },
-              {
-                href: "/working-groups",
-                label: "Working Groups",
-              },
-            ],
-          },
-          {
             label: "Research & Innovation",
             position: "left",
             items: [
               {
-                href: "/publications",
-                label: "Publications",
+                href: "/apps",
+                label: "Apps",
               },
               {
-                type: "doc",
-                docId: "products/intro",
-                label: "Softwares",
+                href: "/datasets",
+                label: "Datasets",
+              },
+              {href: "/presentations",
+                label: "Presentations",
+              },
+              {href: "/publications",
+                label: "Publications",
               },
               {
                 type: "doc",
                 docId: "services/intro",
                 label: "Services",
               },
+            ],
+          },
+          {
+            label: "Docs & Learning",
+            position: "left",
+            items: [
               {
-                href: "/community_products",
-                label: "Community Products",
+                type: "doc",
+                docId: "products/intro",
+                label: "Software",
               },
+             {
+                href: "/Courses",
+                label: "Courses",
+              } 
             ],
           },
           {
@@ -438,14 +465,38 @@ const config = {
             ],
           },
           {
-            href: "/blog",
-            label: "Blog",
+            label: "About CIROH",
             position: "right",
+            items: [
+              {
+                type: "doc",
+                docId: "policies/intro",
+                label: "Policies",
+              },
+              {
+                href: "/working-groups",
+                label: "Working Groups",
+              },
+            ],
           },
+
           {
-            href: "/news",
-            label: "News",
+            label: "Blog & News",
             position: "right",
+            items: [
+              {
+                href: "/blog",
+                label: "Blog",
+              },
+              {
+                href: "/news",
+                label: "News",
+              }
+            ]
+          },
+         {
+            type: 'custom-githubAuth',
+            position: 'right',
           },
         ],
       },
