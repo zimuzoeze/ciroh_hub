@@ -71,10 +71,22 @@ jobs:
             echo "Deploying to STAGING environment"
           fi
 
-      - name: GitHub Pages deployment
+      # Might be possible to merge these into one function,
+      # but don't want to chance insecure handling of secrets.
+      - name: GitHub Pages deployment to staging
         uses: JamesIves/github-pages-deploy-action@v4.6.1
+        if: env.ENVIRONMENT == "staging"
         with:
-          token: ${{ secrets.CIROH_GITHUB_TOKEN }}
+          token: ${{ secrets.GH_STAGING_TOKEN }}
+          branch: main
+          folder: build
+          repository-name: ${{ env.TARGET_REPO }}
+
+      - name: GitHub Pages deployment to production
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        if: env.ENVIRONMENT == "production"
+        with:
+          token: ${{ secrets.GH_PRODUCTION_TOKEN }}
           branch: main
           folder: build
           repository-name: ${{ env.TARGET_REPO }}
