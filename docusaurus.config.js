@@ -243,11 +243,6 @@ const config = {
               {href: "/publications",
                 label: "Publications",
               },
-              {
-                type: "doc",
-                docId: "services/intro",
-                label: "Services",
-              },
             ],
           },
           {
@@ -266,7 +261,27 @@ const config = {
             ],
           },
           {
-            label: "Community & Collaboration",
+            label: "Operations",
+            position: "left",
+            items: [
+              {
+                type: "doc",
+                docId: "services/intro",
+                label: "IT Services",
+              },
+              {
+                type: "doc",
+                docId: "policies/intro",
+                label: "Policies",
+              },
+              {
+                href: "/working-groups",
+                label: "Working Groups",
+              },
+            ],
+          },
+          {
+            label: "Community",
             position: "left",
             items: [
               {
@@ -279,24 +294,9 @@ const config = {
               },
             ],
           },
-          {
-            label: "About CIROH",
-            position: "right",
-            items: [
-              {
-                type: "doc",
-                docId: "policies/intro",
-                label: "Policies",
-              },
-              {
-                href: "/working-groups",
-                label: "Working Groups",
-              },
-            ],
-          },
 
           {
-            label: "Blog & News",
+            label: "Latest Updates",
             position: "right",
             items: [
               {
@@ -306,6 +306,10 @@ const config = {
               {
                 href: "/news",
                 label: "News",
+              },
+              {
+                href: "/release-notes",
+                label: "Release Notes",
               }
             ]
           },
