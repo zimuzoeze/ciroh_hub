@@ -5,18 +5,17 @@ CIROH Hub is constructed using [Docusaurus](https://docusaurus.io/), a modern st
 ## Repository
 
 The source code for CIROH Hub is available at:  
-[https://github.com/CIROH-UA/ciroh-ua_website](https://github.com/CIROH-UA/ciroh-ua_website)
+[https://github.com/CIROH-UA/ciroh_hub](https://github.com/CIROH-UA/ciroh_hub)
 
 ## Environments
 
 ### Production
 The production environment is available at:  
-[https://docs.ciroh.org/](https://docs.ciroh.org/)
+[https://hub.ciroh.org/](https://hub.ciroh.org/)
 
 ### Staging
 The staging environment is used for testing and validating changes before deploying to production. This allows contributors to preview their changes in a live environment without affecting the production site.
-[https://docs.ciroh.org/docuhub-staging/](https://docs.ciroh.org/docuhub-staging/)
-
+[https://hub.ciroh.org/docuhub-staging/](https://hub.ciroh.org/docuhub-staging/)
 ## How to Contribute
 
 1. **Edit Content**: See something that needs to be updated? Click on the "Edit page" button at the bottom of the page to make direct changes to the documentation.
@@ -27,9 +26,7 @@ The staging environment is used for testing and validating changes before deploy
 
 4. **Contribute to Blog Section**: To add content to the blog, please follow the guidelines in [How to write a new Blog?](https://github.com/CIROH-UA/ciroh-ua_website/blob/main/blog/2023-10-29-intro-docuhub-blog.md)
 
-5. **Report Issues**: Found a bug or have a suggestion? Open an issue in the [GitHub repository](https://github.com/CIROH-UA/ciroh-ua_website) to help improve CIROH Hub.
-
-If you need help, please contact us at [ciroh-it-admin@ua.edu](mailto:ciroh-it-admin@ua.edu) or Arpita Patel at apatel54@ua.edu
+5. **Report Issues**: Found a bug or have a suggestion? Open an issue in the [GitHub repository](https://github.com/CIROH-UA/ciroh_hub) to help improve CIROH Hub.
 
 ## Setup for running CIROH Hub locally
 
@@ -37,8 +34,8 @@ To set up the project locally, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/CIROH-UA/ciroh-ua_website.git
-   cd ciroh-ua_website
+   git clone https://github.com/CIROH-UA/ciroh_hub.git
+   cd ciroh_hub
    ```
 
 2. **Install Node.js**: 
@@ -65,6 +62,8 @@ To set up the project locally, follow these steps:
    
 6. **View the Site**:
    Open your browser and navigate to http://localhost:3000 to see the local version of CIROH Hub.
+
+   > **Note:** Some features (for example, Zotero integrations and other third-party services) require API keys provided via a local `.env` file. If you want to view and test those integrations locally, create an `.env` file with the required keys/secrets before running the site. Without these values, the site will still run, but the affected integrations may be unavailable or show limited functionality.
 
 ## How to validate PR locally
 

@@ -34,7 +34,7 @@ export default function CoursesPage() {
       </div>
       <div className="margin-top--md">
         <Header 
-            title="Learning" 
+            title="Courses" 
             tagline="Access a range of open courses in hydrology, enriched with CIROH and NOAA research, designed for learners at all levels seeking to deepen their understanding of water science."
             buttons={[
               { label: "Add your Course", href: contributeUrl, primary: true },

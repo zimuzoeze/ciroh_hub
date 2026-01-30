@@ -63,8 +63,7 @@ export default function Header({ title, tagline, buttons }) {
                   'tw-text-5xl sm:tw-text-6xl lg:tw-text-7xl tw-font-bold tw-mb-4'
                 )}
               >
-                <span className="tw-text-blue-800 dark:tw-text-white">{title}</span>{' '}
-                <span className="tw-text-blue-800 dark:tw-text-cyan-400"> Hub</span>
+                <span className="tw-text-blue-800 dark:tw-text-white">{title}</span>
               </h1>
 
 

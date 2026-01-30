@@ -670,8 +670,8 @@ export default function HomepageFeatures() {
                   >
                     How to Contribute?
                   </Link>
-
-                  {/* BUTTON 2 */}
+                  {/*
+                  BUTTON 2 - REINSTATE ONCE MICROSOFT FORMS BACKEND IS FULLY RESTORED
                   <Link
                     to="https://forms.office.com/r/5ww7qRWwwf"
                     target="_blank"
@@ -681,8 +681,9 @@ export default function HomepageFeatures() {
               hover:tw-bg-white hover:tw-text-slate-900
             "
                   >
-                    Your Feedback Matters
+                    Submit Feedback
                   </Link>
+                  */}
 
                 </div>
               </div>
