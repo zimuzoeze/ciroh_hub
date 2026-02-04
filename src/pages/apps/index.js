@@ -45,7 +45,7 @@ export default function AppsPage() {
         />
       </div>
       <main>
-        <HydroShareResourcesSelector keyword="nwm_portal_app" defaultImage={defaultImage} />
+        <HydroShareResourcesSelector keyword="nwm_portal_app,ciroh_hub_app" defaultImage={defaultImage} />
         <TechBox items={items} type={"Applications"} tethys/>
       </main>
     
