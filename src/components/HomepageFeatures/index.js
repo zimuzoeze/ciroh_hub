@@ -583,14 +583,18 @@ export default function HomepageFeatures() {
     setStatsLoading(true);
     setStatsError(null);
     try {
-      const [datasets, presentations, courses, products] = await Promise.all([
+      const [datasetsOld, presentationsOld, coursesOld, productsOld, datasets, presentations, courses, products] = await Promise.all([
         countByKeyword("ciroh_portal_data"),
         countByKeyword("ciroh_portal_presentation"),
         countByKeyword("nwm_portal_module"),
         countByKeyword("nwm_portal_app"),
+        countByKeyword("ciroh_hub_data"),
+        countByKeyword("ciroh_hub_presentation"),
+        countByKeyword("ciroh_hub_module"),
+        countByKeyword("ciroh_hub_app"),
       ]);
 
-      setStats({ products, datasets, presentations, courses });
+      setStats({ products: productsOld + products, datasets: datasetsOld + datasets, presentations: presentationsOld + presentations, courses: coursesOld + courses });
     } catch (err) {
       setStatsError(err?.message || String(err));
       // reset to safe defaults on error
