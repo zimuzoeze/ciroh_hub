@@ -226,7 +226,7 @@ const config = {
           },
           items: [
             {
-              label: "Research & Innovation",
+              label: "Research Products",
               position: "left",
               items: [
                 {
@@ -236,6 +236,11 @@ const config = {
                 {
                   href: "/datasets",
                   label: "Datasets",
+                },
+                {
+                  type: "doc",
+                  docId: "products/intro",
+                  label: "Software",
                 },
                 {
                   href: "/presentations",
@@ -248,19 +253,9 @@ const config = {
               ],
             },
             {
-              label: "Docs & Learning",
+              label: "Courses",
               position: "left",
-              items: [
-                {
-                  type: "doc",
-                  docId: "products/intro",
-                  label: "Software",
-                },
-                {
-                  href: "/courses",
-                  label: "Courses",
-                }
-              ],
+              href: "/courses",
             },
             {
               label: "Operations",
@@ -322,10 +317,6 @@ const config = {
             {
               title: 'Quick Links',
               items: [
-                {
-                  label: 'Community Products',
-                  href: '/community_products'
-                },
                 {
                   label: 'Contact Us',
                   href: '/contact'

@@ -63,9 +63,9 @@ function HomepageHeader() {
             <div className="tw-flex tw-flex-col sm:tw-flex-row tw-gap-3 sm:tw-gap-4 tw-pt-4">
               <Link
                 className="tw-no-underline lg:tw-text-xl tw-inline-flex tw-items-center tw-justify-center tw-px-6 tw-py-3 tw-rounded-lg tw-font-semibold tw-transition-all tw-duration-300 tw-bg-blue-700 dark:tw-bg-cyan-500 tw-text-white dark:hover:tw-bg-cyan-700 hover:tw-bg-blue-800"
-                to="/docs/products/intro"
+                to="/publications"
               >
-                Get Started
+                Publications
               </Link>
 
               <Link
@@ -76,10 +76,10 @@ function HomepageHeader() {
                   //   ? 'tw-border-slate-300 tw-text-white hover:tw-border-white hover:tw-text-white'
                   //   : 'tw-border-slate-400 tw-text-blue-700 hover:tw-border-blue-600 hover:tw-text-blue-600'
                 )}
-                to="/docs/services/intro"
+                to="/docs/services/access"
               >
 
-                Learn More
+                IT Services
               </Link>
             </div>
           </div>

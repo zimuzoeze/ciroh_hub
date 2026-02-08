@@ -117,10 +117,10 @@ const carouselCards = [
     link: "/docs/services/on-prem/Pantarhei"
   },
   {
-    title: "Hydrofabric",
-    image: "img/graphics/ciroh-synergy.jpg",
-    description: "Geospatial fabric for hydrological modeling providing standardized catchment and flowline representations for water resource applications.",
-    link: "docs/products/Hydrofabric/"
+    title: "NRDS",
+    image: "img/products/nrds/nrds.png",
+    description: "An archive of daily NextGen-based hydrologic simulations living entirely in AWS. NRDS democratizes forcings, outputs, and configurations so the community can iterate, validate, and operationalize better streamflow predictions.",
+    link: "docs/products/research-datastream/"
   }
 ];
 
@@ -614,7 +614,7 @@ export default function HomepageFeatures() {
 
 
   return (
-    <><HighlightCards />
+    <>
       <section className={styles.homepageContainer}>
         <div className="container">
           <CardCarousel cards={carouselCards} />
@@ -700,9 +700,9 @@ export default function HomepageFeatures() {
           </div>
         </div>
 
-        <div className="ciroh-cards-section">
+        {/* <div className="ciroh-cards-section">
           <CardGridSection items={cardGridItems} />
-        </div>
+        </div> */}
 
 
 
