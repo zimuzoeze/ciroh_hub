@@ -77,21 +77,14 @@ export default function Header({ title, tagline, buttons }) {
               <div
                 className={clsx(
                   styles.logoBg,
-                  'tw-relative tw-w-72 sm:tw-w-80 lg:tw-w-[26rem] tw-h-72 sm:tw-h-80 lg:tw-h-[26rem] tw-rounded-full tw-flex tw-items-center tw-justify-center tw-shadow-2xl tw-animate-float',
-                  isDarkTheme
-                    ? 'tw-bg-white tw-shadow-blue-500/30'
-                    : 'tw-bg-blue-900 tw-shadow-blue-700/40'
+                  'tw-relative tw-w-72 tw-h-72 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-animate-float',
                 )}
               >
                 <img
-                  src={isDarkTheme ? "img/logos/ciroh-bgsafe.png" : "img/logos/ciroh-dark.png"}
+                  src={isDarkTheme ?  "img/logos/ciroh-dark.png" : "img/logos/ciroh-bgsafe.png" }
                   alt="CIROH Logo"
                   className="tw-w-48 sm:tw-w-56 lg:tw-w-64 tw-h-auto tw-drop-shadow-xl"
                 />
-
-
-                <div className="tw-absolute tw-inset-0 tw-rounded-full tw-border-4 tw-border-blue-300/30 tw-animate-ping-slow" />
-                <div className="tw-absolute tw-inset-0 tw-rounded-full tw-border-2 tw-border-blue-400/50" />
               </div>
             </div>
           </div>
