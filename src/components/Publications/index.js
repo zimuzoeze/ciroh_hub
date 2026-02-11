@@ -1,4 +1,4 @@
-/* Publications.jsx – Zotero list with search, sort **and 1-collection filter** */
+/* Publications.jsx - Zotero list with search, sort **and 1-collection filter** */
 import React, {
   useState,
   useEffect,
@@ -23,7 +23,7 @@ const SCROLL_THRESHOLD = 200;
 let   debounceTimer    = null;
 const DEBOUNCE_MS      = 1_000;
 
-/* ----- helper: read “Total-Results” header -------------------------------- */
+/* ----- helper: read "Total-Results" header -------------------------------- */
 export async function fetchTotal(groupId, apiKey, params, keyStr = '') {
   const path = keyStr ? `/collections/${keyStr}/items/top` : '/items/top';
 
@@ -41,7 +41,7 @@ export async function fetchTotal(groupId, apiKey, params, keyStr = '') {
 /* ------------------------------------------------------------------------- */
 export default function Publications({ apiKey, groupId }) {
   console.log(apiKey, groupId);
-  /* memoised Zotero client (doesn’t re-create on every render) */
+  /* memoised Zotero client (doesn't re-create on every render) */
   const zotero = useMemo(
     () => new Zotero(apiKey).library('group', groupId),
     [apiKey, groupId],
@@ -56,6 +56,9 @@ export default function Publications({ apiKey, groupId }) {
   const fetching = useRef(false);
 
   const [totalItems,     setTotalItems]     = useState(null);
+  const [totalLoading,   setTotalLoading]   = useState(false);
+  const [collectionsCount, setCollectionsCount] = useState(null);
+  const [collectionsLoading, setCollectionsLoading] = useState(false);
 
   const [searchInput,    setSearchInput]    = useState('');
   const [filterSearch,   setFilterSearch]   = useState('');
@@ -78,12 +81,15 @@ export default function Publications({ apiKey, groupId }) {
       ...(filterItemType !== 'all' ? { itemType: filterItemType } : {}),
     };
     try {
+      setTotalLoading(true);
       setTotalItems(
         await fetchTotal(groupId, apiKey, params, collectionKeyStr),
       );
     } catch (e) {
       console.error('Total-Results header error:', e);
       setTotalItems(null);
+    } finally {
+      setTotalLoading(false);
     }
   }, [
     groupId,
@@ -207,10 +213,119 @@ export default function Publications({ apiKey, groupId }) {
   };
   const handleBlur = () => commitSearch(searchInput);
 
+  /* collections count */
+  useEffect(() => {
+    if (!zotero) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        setCollectionsLoading(true);
+        const res = await zotero.collections().get();
+        const raw = res?.raw ?? [];
+        const count = Array.isArray(raw)
+          ? raw.length
+          : (typeof res?.getData === 'function' ? res.getData().length : 0);
+        if (!cancelled) setCollectionsCount(count);
+      } catch (err) {
+        console.error('Could not load Zotero collections count:', err);
+        if (!cancelled) setCollectionsCount(null);
+      } finally {
+        if (!cancelled) setCollectionsLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [zotero]);
+
+  const stats = useMemo(() => {
+    const items = displayedItems.filter(i => i && !i.placeholder);
+    const totalPublications = totalItems ?? items.length;
+    const contributors = (() => {
+      const set = new Set();
+      for (const item of items) {
+        const creators = Array.isArray(item?.creators) ? item.creators : [];
+        creators.forEach(creator => {
+          const name = [
+            creator?.lastName,
+            creator?.firstName,
+          ].filter(Boolean).join(', ') || creator?.name;
+          if (name) set.add(name);
+        });
+      }
+      return set.size;
+    })();
+    const lastUpdated = (() => {
+      let latest = null;
+      for (const item of items) {
+        const dateStr = item?.dateModified || item?.dateAdded;
+        if (!dateStr) continue;
+        const d = new Date(dateStr);
+        if (Number.isNaN(d.getTime())) continue;
+        if (!latest || d > latest) latest = d;
+      }
+      if (!latest) return '-';
+      try {
+        return new Intl.DateTimeFormat(undefined, { month: 'short', year: 'numeric' }).format(latest);
+      } catch {
+        return latest.toISOString().slice(0, 10);
+      }
+    })();
+    return {
+      totalPublications,
+      collections: collectionsCount ?? '-',
+      contributors,
+      lastUpdated,
+    };
+  }, [displayedItems, totalItems, collectionsCount]);
+
+  const statsLoading = loading || fetching.current || totalLoading || collectionsLoading;
+
   /* ---------------- render ---------------- */
   return (
+    <div>
+        <div className="tw-relative tw-z-20 tw-border-y tw-border-slate-200/70 dark:tw-border-slate-700/70 tw-bg-white/60 dark:tw-bg-slate-950 tw-backdrop-blur tw-mb-6">
+          <div className="tw-mx-auto tw-max-w-7xl tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-6">
+            <div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-6">
+              <div className="tw-text-center">
+              <div className="tw-text-2xl sm:tw-text-3xl tw-font-bold tw-text-cyan-600 dark:tw-text-cyan-400">
+                {statsLoading
+                  ? <span className={styles.loadingText}>...</span>
+                  : stats.totalPublications}
+              </div>
+              <div className="tw-mt-1 tw-text-xs sm:tw-text-sm tw-text-slate-600 dark:tw-text-slate-300">Total Publications</div>
+            </div>
+            <div className="tw-text-center">
+              <div className="tw-text-2xl sm:tw-text-3xl tw-font-bold tw-text-cyan-600 dark:tw-text-cyan-400">
+                {statsLoading
+                  ? <span className={styles.loadingText}>...</span>
+                  : stats.collections}
+              </div>
+              <div className="tw-mt-1 tw-text-xs sm:tw-text-sm tw-text-slate-600 dark:tw-text-slate-300">Collections</div>
+            </div>
+            <div className="tw-text-center">
+              <div className="tw-text-2xl sm:tw-text-3xl tw-font-bold tw-text-cyan-600 dark:tw-text-cyan-400">
+                {statsLoading
+                  ? <span className={styles.loadingText}>...</span>
+                  : stats.contributors}
+              </div>
+              <div className="tw-mt-1 tw-text-xs sm:tw-text-sm tw-text-slate-600 dark:tw-text-slate-300">Contributors</div>
+            </div>
+            <div className="tw-text-center">
+              <div className="tw-text-2xl sm:tw-text-3xl tw-font-bold tw-text-cyan-600 dark:tw-text-cyan-400">
+                {statsLoading
+                  ? <span className={styles.loadingText}>...</span>
+                  : stats.lastUpdated}
+              </div>
+              <div className="tw-mt-1 tw-text-xs sm:tw-text-sm tw-text-slate-600 dark:tw-text-slate-300">Latest Update</div>
+            </div>
+            </div>
+          </div>
+        </div>
     <div className={styles.wrapper}>
+
       <div className={styles.container}>
+        {/* stats */}
+
+
         {/* counter */}
         <div className={styles.counterRow}>
           {loading || fetching.current ? "Fetching Publications..." : (
@@ -294,7 +409,7 @@ export default function Publications({ apiKey, groupId }) {
         <p className={styles.hint}>
           <strong>🧪&nbsp;</strong>
           A result is returned only if the exact text you type occurs <em>anywhere</em> in the
-          citation’s <em>title</em>, <em>author</em>, or <em>year</em>.
+          citation's <em>title</em>, <em>author</em>, or <em>year</em>.
         </p>
 
         {/* error */}
@@ -320,6 +435,7 @@ export default function Publications({ apiKey, groupId }) {
             <p className={styles.emptyMessage}>No&nbsp;Publications&nbsp;Found</p>
           )}
       </div>
+    </div>
     </div>
   );
 }

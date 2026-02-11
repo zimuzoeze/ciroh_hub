@@ -5,53 +5,63 @@ import styles from './contribute.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HydroShareCard from '@site/src/components/HydroShareCard';
 import clsx from 'clsx';
+import Header from '@site/src/components/Header';
+import { ConstellationCanvas } from '@site/src/components/ConstellationCanvas';
+import { useColorMode } from '@docusaurus/theme-common';
 
 export default function Contribute() {
+  return (
+    <Layout
+      title="Contribute to CIROH"
+      description="Learn how to contribute to CIROH's open science initiatives">
+      <ContributeContent />
+    </Layout>
+  );
+}
+
+function ContributeContent() {
   const { siteConfig } = useDocusaurusContext();
+  const { colorMode } = useColorMode();
+  const isDarkTheme = colorMode === 'dark';
   const contactUrl = useBaseUrl('/contact');
-  const portalUrl = useBaseUrl('/products/portal/');
-  const resourcesUrl = useBaseUrl('/resources');
   const zoteroLogin = siteConfig?.customFields?.externalLinks?.zoteroLogin || 'https://www.zotero.org/user/login';
   const feedbackUrl = siteConfig?.customFields?.externalLinks?.feedbackForm || 'https://forms.office.com/r/5ww7qRWwwf';
   const addProductUrl = "https://github.com/CIROH-UA/ciroh_hub/issues/new?assignees=&labels=on-prem&projects=&template=product-request.md";
   const blogIdeaUrl = siteConfig?.customFields?.blogIdeaUrl || 'https://github.com/CIROH-UA/ciroh_hub/issues/new?template=docuhub-blog-post.md';
   const wgIntakeFormUrl = siteConfig?.customFields?.externalLinks?.wgIntakeForm || 'https://app.smartsheet.com/b/form/07569d6285f643c1a57fd18daab98f7e'; // TODO: Replace with actual WG intake form URL
 
-    useEffect(() => {
+  useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      // Remove the # from the hash
       const id = hash.replace('#', '');
-      // Wait a bit for the page to render
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          // Scroll to the element with offset for fixed header
-          const yOffset = -100; // Adjust this value based on your header height
+          const yOffset = -100;
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);
     }
   }, []);
+
   return (
-    <Layout
-      title="Contribute to CIROH"
-      description="Learn how to contribute to CIROH's open science initiatives">
-      <main>
-        {/* Contribute Banner */}
-        <div className={clsx(styles.contributeBanner, "tw-bg-cyan-500 tw-text-white")}>
-          <div className={styles.bannerContainer}>
-            <h1 className={clsx(styles.bannerTitle, "tw-text-slate-900 dark:tw-text-white")}>Contribute to CIROH</h1>
-            <p className={clsx(styles.bannerSubtitle, "tw-text-slate-900 dark:tw-text-white")}>
-              Join our community of researchers, developers, and water science enthusiasts.<br />
-              Your contributions help advance hydrologic science and support NOAA's water prediction initiatives.
-            </p>
-          </div>
+    <main>
+      {/* Hero */}
+      <section className="tw-relative tw-z-20 tw-overflow-hidden tw-pb-8">
+        <div className="tw-absolute tw-inset-0 tw-pointer-events-none tw-overflow-hidden" style={{ zIndex: 0 }}>
+          <ConstellationCanvas isDarkTheme={isDarkTheme} />
         </div>
+        <div className="margin-top--lg">
+          <Header
+            title="Contribute to CIROH"
+            tagline="Join our community of researchers, developers, and water science enthusiasts. Your contributions help advance hydrologic science and support NOAA's water prediction initiatives."
+          />
+        </div>
+      </section>
 
         {/* Main Content */}
-        <div className="container margin-vert--xl">
+        <div className={styles.mainContainer}>
           {/* Mission Statement Callout (flat) */}
           <div className={styles.flatMissionText}>
             <p>
@@ -60,39 +70,6 @@ export default function Contribute() {
               showcased right here in CIROH Hub for broader reach. Publish your papers to <a href={zoteroLogin} target="_blank" rel="noreferrer noopener">Zotero</a> and they'll appear here as part of CIROH's shared library.
             </p>
           </div>
-
-          {/* Contribute to DocuHub */}
-          {/* Dummying this section out as potentially redundant. Restore if rpeferred. */}
-          {/*
-          <section className={clsx(styles.brandCard, "margin-vert--xl")}>
-            <div className={styles.brandHeader}>
-              <img
-                className={styles.brandLogo}
-                // TODO: Update Docuhub logo to CIROH Hub Logo.
-                src={useBaseUrl('/img/logos/docuhub.png')}
-                alt="CIROH Hub"
-              />
-              <div className={styles.brandTitleWrap}>
-                <h3 className={styles.brandTitle}>Contribute to CIROH Hub</h3>
-                <p className={styles.brandSubtitle}>
-                  Share your R2O products, submit blog posts about your research, document your GitHub projects, 
-                  or add guides and tutorials. The CIROH Hub team is happy to feature your work and make it accessible 
-                  to the hydrologic science community.
-                </p>
-              </div>
-            </div>
-            <div className={styles.brandActions}>
-              <a href={addProductUrl} className={styles.addProductButton} target='_blank'>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img"><path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
-                Add Your Product
-              </a>
-              <a href={blogIdeaUrl} target="_blank" rel="noreferrer noopener" className={styles.blogIdeaButton}>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img"><path d="M9 21h6a1 1 0 001-1v-1.2a4.8 4.8 0 002-3.8 6 6 0 10-12 0c0 1.5.74 2.9 2 3.8V20a1 1 0 001 1zm3-16a4 4 0 014 4c0 1.27-.63 2.47-1.7 3.2A1 1 0 0014 13v2h-4v-2a1 1 0 00-.3-.8A4 4 0 0112 5z" fill="currentColor"/></svg>
-                Submit a blog idea
-              </a>
-            </div>
-          </section> */}
-
           {/* Note: horizontal rules around Hydroshare have added margins for spacing */}
           <hr className="margin-vert--xl" />
 
@@ -251,7 +228,6 @@ export default function Contribute() {
             </div>
           </div>
         </div>
-      </main>
-    </Layout>
+    </main>
   );
 }

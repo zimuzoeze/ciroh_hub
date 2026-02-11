@@ -2,7 +2,6 @@
 .heroBanner {
   position: relative;
   z-index: 2;
-  text-align: center;
   overflow: hidden;
   color: var(--ifm-color-primary);
   padding: 1rem 0 0.5rem;
@@ -27,12 +26,9 @@
   color: var(--ifm-color-primary-dark);
 }
 .heroSubtitle {
-  font-weight: 500;
-  margin-bottom: 5rem;
-  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  color: var(--ifm-footer-color);
 }
-
-
 
 /* Responsive adjustments for heroBanner */
 @media screen and (max-width: 996px) {

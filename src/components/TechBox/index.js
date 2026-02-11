@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 import styles from "./styles.module.css";
 
-export default function TechBox({ items, type, poweredByItems }) {
+const DEFAULT_POWERED_BY = [
+  {
+    name: 'Tethys Platform',
+    href: 'https://www.tethysplatform.org/',
+    className: styles.link,
+  },
+  {
+    name: 'HydroShare',
+    href: 'https://hydroshare.org/',
+    className: styles.link,
+  },
+];
+
+export default function TechBox({ items=DEFAULT_POWERED_BY,type }) {
   const { colorMode } = useColorMode();
 
-  const renderPoweredBy = () => {
-    if (!poweredByItems || poweredByItems.length === 0) return null;
-    
-    return poweredByItems.map((item, index) => (
-      <React.Fragment key={item.name}>
-        {index > 0 && index === poweredByItems.length - 1 ? ' and ' : ', '}
-        <a 
-          href={item.href} 
-          className={item.className || styles.link}
-        >
-          {item.name}
-        </a>
-      </React.Fragment>
-    )).slice(1); // Remove leading comma
-  };
+  const renderPoweredBy = useCallback(() => {
+    if (!items || items.length === 0) return null;
+    return items.map((item, index) => {
+      const isFirst = index === 0;
+      const isLast = index === items.length - 1;
+      const separator = isFirst ? ' ' : isLast ? ' and ' : ', ';
+
+      return (
+        <React.Fragment key={`${item.name}-${index}`}>
+          {separator}
+          <a href={item.href} className={item.className || styles.link}>
+            {item.name}
+          </a>
+        </React.Fragment>
+      );
+    });
+  }, [items]);
 
   return (
     <div className={styles.wrapper}>
@@ -41,18 +56,3 @@ export default function TechBox({ items, type, poweredByItems }) {
     </div>
   );
 }
-
-TechBox.defaultProps = {
-  poweredByItems: [
-    {
-      name: 'Tethys Platform',
-      href: 'https://www.tethysplatform.org/',
-      className: styles.link
-    },
-    {
-      name: 'HydroShare',
-      href: 'https://hydroshare.org/',
-      className: styles.link
-    }
-  ]
-};

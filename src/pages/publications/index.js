@@ -14,6 +14,8 @@ const items = [
     lightIcon: ZoteroLightLogo,
     darkIcon: ZoteroDarkLogo,
     alt: 'Zotero',
+    name: 'Zotero',
+    href: 'https://www.zotero.org/',
   },
 ];
 
@@ -31,7 +33,7 @@ export default function PublicationsPage() {
       <div className="margin-top--lg">
         <Header 
             title="Publications" 
-            tagline="Ex­plore a rich selection of pub­lic­a­tions and papers featuring CIROH and NOAA's collaborative research in hydrology. Discover insights on water management, forecasting, and climate impacts through this comprehensive resource for scholars and professionals." 
+            tagline="Explore a rich selection of publications and papers featuring CIROH and NOAA's collaborative research in hydrology. Discover insights on water management, forecasting, and climate impacts through this comprehensive resource for scholars and professionals." 
             buttons={[
                 { label: "Add your Publication", href: contributeUrl, primary: true },
                 { label: "Visit Our Library", href: "https://www.zotero.org/groups/5261687/ciroh/library" }
@@ -39,7 +41,7 @@ export default function PublicationsPage() {
         />
       </div>
 
-      <main>
+      <main className="tw-relative tw-z-20">
         
        <Publications 
           apiKey={siteConfig.customFields.zotero_api_key}

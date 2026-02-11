@@ -5,7 +5,7 @@
  */
 
 /* ----------------------------- */
-/* LIGHT MODE — solid white      */
+/* LIGHT MODE - solid white      */
 /* ----------------------------- */
 
 :root {
@@ -48,7 +48,7 @@
 }
 
 /* ----------------------------- */
-/* DARK MODE — gradient theme    */
+/* DARK MODE - gradient theme    */
 /* ----------------------------- */
 
 /* Force opaque navbar in dark theme */
@@ -197,6 +197,18 @@
   .player-wrapper {
     padding-top: 75%; /* 4:3 for mobile */
   }
+}
+
+/* Stats loading blink */
+.statsLoadingText {
+  display: inline-block;
+  animation: statsBlink 1.1s steps(2, start) infinite;
+}
+
+@keyframes statsBlink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
 }
 
 /* Scaling fonts + sidebar for smaller screens */

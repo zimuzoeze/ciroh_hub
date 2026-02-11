@@ -40,6 +40,7 @@ export default function HydroShareResourcesSelector({
     thumbnail_url: "",
     page_url: "",
     docs_url: "",
+    embed_url: "",
   }));
 
   const hs_icon = colorMode === 'dark' ? DatasetDarkIcon : DatasetLightIcon;
@@ -83,6 +84,7 @@ export default function HydroShareResourcesSelector({
               thumbnail_url: "",
               page_url: "",
               docs_url: "",
+              embed_url: "",
             }))
           ]);
         }
@@ -105,7 +107,7 @@ export default function HydroShareResourcesSelector({
           title: res.resource_title,
           authors: res.authors.map(
             (author) => author.split(',').reverse().join(' ')
-          ).join(' 🖊️ '),
+          ).join(' 🖊 '),
           resource_type: res.resource_type,
           resource_url: res.resource_url,
           description: res.abstract || "No description available.",
@@ -141,11 +143,14 @@ export default function HydroShareResourcesSelector({
         for (let res of mappedList) {
           try {
             const customMetadata = await fetchResourceCustomMetadata(res.resource_id);
+            let embedUrl = "";
+            if (customMetadata?.pres_path) embedUrl = `https://www.hydroshare.org/resource/${res.resource_id}/data/contents/${customMetadata.pres_path}`;
             const updatedResource = {
               ...res,
               thumbnail_url: customMetadata?.thumbnail_url || hs_icon,
               page_url: customMetadata?.page_url || "",
               docs_url: customMetadata?.docs_url || "",
+              embed_url: embedUrl,
             };
 
             setResources((current) =>
