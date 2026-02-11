@@ -46,7 +46,7 @@ function ActionButton({ onClick, title, children }) {
             type="button"
             onClick={onClick}
             title={title}
-            className="tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-white/20 tw-bg-white/15 tw-p-2 tw-text-white hover:tw-text-cyan-300 dark:tw-border-slate-600 dark:tw-bg-slate-700/50 dark:tw-text-slate-300 dark:hover:tw-text-cyan-300 hover:tw-bg-white/25 dark:hover:tw-bg-slate-700 hover:tw-border-cyan-400 dark:hover:tw-border-cyan-500/40 tw-transition tw-shadow-sm hover:tw-shadow-md"
+            className="tw-inline-flex tw-cursor-pointer tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-white/20 tw-bg-white/15 tw-p-2 tw-text-white hover:tw-text-cyan-300 dark:tw-border-slate-600 dark:tw-bg-slate-700/50 dark:tw-text-slate-300 dark:hover:tw-text-cyan-300 hover:tw-bg-white/25 dark:hover:tw-bg-slate-700 hover:tw-border-cyan-400 dark:hover:tw-border-cyan-500/40 tw-transition tw-shadow-sm hover:tw-shadow-md"
         >
             {children}
         </button>

@@ -107,7 +107,7 @@ export default function HydroShareResourcesSelector({
           title: res.resource_title,
           authors: res.authors.map(
             (author) => author.split(',').reverse().join(' ')
-          ).join(' 🖊️ '),
+          ).join(' 🖊 '),
           resource_type: res.resource_type,
           resource_url: res.resource_url,
           description: res.abstract || "No description available.",
