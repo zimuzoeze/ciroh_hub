@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="tw-py-20 tw-px-6 tw-relative tw-z-20">
+      <section className="tw-pb-20 tw-px-6 tw-relative tw-z-20">
         <div className="tw-container tw-mx-auto tw-max-w-7xl">
           <HomepageFeatures />
         </div>

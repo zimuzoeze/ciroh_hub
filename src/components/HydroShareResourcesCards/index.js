@@ -129,7 +129,7 @@ function ResourceCard({ resource, defaultImage }) {
                             <img
                                 src={thumbnailUrl}
                                 alt={title}
-                                className="tw-h-full tw-w-full tw-object-cover"
+                                className="tw-h-full tw-w-full tw-object-fill"
                                 loading="lazy"
                             />
                         ) : (
