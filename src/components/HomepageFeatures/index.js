@@ -17,7 +17,7 @@ import Hyperspeed from '../Reactbits/hyperSpeed'
 import CardCarousel from "./CardCarousel";
 import CardGridSection from "./cardGrid";
 import { cardGridItems } from "./cardGridItems";
-// Correct import for Docusaurus — NO alias
+// Correct import for Docusaurus - NO alias
 import { fetchResourcesBySearch } from "../../api/hydroshareAPI";
 
 async function countByKeyword(keyword) {
@@ -172,11 +172,11 @@ const SponsorList = [
 ];
 const MemberList = [
   {
-    name: "Utah State University",
-    logo: "https://i.pinimg.com/originals/96/65/d4/9665d4322a25b6a2ff8cc4f31a178749.png",
-    link: "https://uwrl.usu.edu/",
-    width: "210",
-    height: "100",
+    name: "The University of Alabama in Huntsville",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UAH_primary-300x159.png",
+    link: "https://www.itsc.uah.edu/home/projects/adapt-precipitation-super-resolution-and-data-fusion-deep-learning-techniques-operational-flood-forecasting",
+    width: "190",
+    height: "130",
   },
   {
     name: "The University of Vermont",
@@ -185,82 +185,6 @@ const MemberList = [
     width: "210",
     height: "70",
   },
-  {
-    name: "University of Utah",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/University_of_Utah_horizontal_logo.svg/1280px-University_of_Utah_horizontal_logo.svg.png",
-    link: "https://www.civil.utah.edu/",
-    width: "210",
-    height: "70",
-  },
-
-  {
-    name: "The University of Alabama in Huntsville",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UAH_primary-300x159.png",
-    link: "https://www.itsc.uah.edu/home/projects/adapt-precipitation-super-resolution-and-data-fusion-deep-learning-techniques-operational-flood-forecasting",
-    width: "190",
-    height: "130",
-  },
-  {
-    name: "University of California San Diego",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UCSD-SIO_Vertical-Color_RGB.png",
-    link: "https://cw3e.ucsd.edu/",
-    width: "190",
-    height: "75",
-  },
-
-  {
-    name: "University of Arizona",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ua_stack_rgb_4_0-300x281.png",
-    link: "https://www.arizona.edu/",
-    width: "105",
-    height: "95",
-  },
-  {
-    name: "University of Hawai'i at Mānoa",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/bottom-300x151.png",
-    link: "https://manoa.hawaii.edu/",
-    width: "190",
-    height: "100",
-  },
-
-  {
-    name: "University of Iowa",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Block-IOWA-GOLD-ffcd00-1024x512.png",
-    link: "https://www.uiowa.edu/",
-    width: "160",
-    height: "80",
-  },
-
-  {
-    name: "University of Saskatchewan",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/usask_usask_colour-300x67.png",
-    link: "https://water.usask.ca/",
-    width: "190",
-    height: "50",
-  },
-  {
-    name: "University of Alabama",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/A-Square-Logo-4c_Official-300x300.jpg",
-    link: "https://www.ua.edu/",
-    width: "70",
-    height: "70",
-  },
-
-  {
-    name: "University of Minnesota",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UMN_M-wdmk-stack-D2D-maroon-blk-300x237.png",
-    link: "https://environment.umn.edu/",
-    width: "170",
-    height: "120",
-  },
-  {
-    name: "Tuskegee University",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/tu_logo_OPTION-300x225.png",
-    link: "https://www.tuskegee.edu/",
-    width: "100",
-    height: "100",
-  },
-
   {
     name: "Bringham Young University",
     logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/byu-wordmark-blue-300x191.png",
@@ -275,6 +199,76 @@ const MemberList = [
     width: "100",
     height: "120",
   },
+  {
+    name: "Tuskegee University",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/tu_logo_OPTION-300x225.png",
+    link: "https://www.tuskegee.edu/",
+    width: "100",
+    height: "100",
+  },
+  {
+    name: "University of Alabama",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/A-Square-Logo-4c_Official-300x300.jpg",
+    link: "https://www.ua.edu/",
+    width: "70",
+    height: "70",
+  },
+  {
+    name: "University of Arizona",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ua_stack_rgb_4_0-300x281.png",
+    link: "https://www.arizona.edu/",
+    width: "105",
+    height: "95",
+  },
+  {
+    name: "University of California San Diego",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UCSD-SIO_Vertical-Color_RGB.png",
+    link: "https://cw3e.ucsd.edu/",
+    width: "190",
+    height: "75",
+  },
+  {
+    name: "University of Hawai'i at Mānoa",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/bottom-300x151.png",
+    link: "https://manoa.hawaii.edu/",
+    width: "190",
+    height: "100",
+  },
+  {
+    name: "University of Iowa",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Block-IOWA-GOLD-ffcd00-1024x512.png",
+    link: "https://www.uiowa.edu/",
+    width: "160",
+    height: "80",
+  },
+  {
+    name: "University of Minnesota",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/UMN_M-wdmk-stack-D2D-maroon-blk-300x237.png",
+    link: "https://environment.umn.edu/",
+    width: "170",
+    height: "120",
+  },
+  {
+    name: "University of Saskatchewan",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/usask_usask_colour-300x67.png",
+    link: "https://water.usask.ca/",
+    width: "190",
+    height: "50",
+  },
+  {
+    name: "University of Utah",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/University_of_Utah_horizontal_logo.svg/1280px-University_of_Utah_horizontal_logo.svg.png",
+    link: "https://www.civil.utah.edu/",
+    width: "210",
+    height: "70",
+  },
+  {
+    name: "Utah State University",
+    logo: "https://i.pinimg.com/originals/96/65/d4/9665d4322a25b6a2ff8cc4f31a178749.png",
+    link: "https://uwrl.usu.edu/",
+    width: "210",
+    height: "100",
+  },
 ];
 
 const PartnerList = [
@@ -286,84 +280,11 @@ const PartnerList = [
     height: "105",
   },
   {
-    name: "Oak Ridge National Laboratory",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ORNL-Two-line_green-300x72.png",
-    link: "https://www.ornl.gov/",
-    width: "190",
-    height: "50",
-  },
-
-  {
-    name: "Dauphin Island Sea Lab",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/DISL-centered-logo-Tag-300x183.png",
-    link: "https://www.disl.edu/",
-    width: "200",
-    height: "120",
-  },
-  {
-    name: "Jupiter Intelligence",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Jupiter_Logo_Color-300x86.png",
-    link: "https://www.jupiterintel.com/",
-    width: "190",
-    height: "50",
-  },
-
-  {
-    name: "RTI International",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/RTI_logo_rgb_1in-300x188.png",
-    link: "https://www.rti.org/centers/rti-center-water-resources",
-    width: "190",
-    height: "100",
-  },
-  {
     name: "CUAHSI",
     logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/new-logo-with-black-text-300x79.png",
     link: "https://www.cuahsi.org/",
     width: "190",
     height: "60",
-  },
-  {
-    name: "Stevens Institute Of Technology",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Stevens-Primary-logo_4C-RGB-262x300.png",
-    link: "https://www.stevens.edu/",
-    width: "126",
-    height: "140",
-  },
-  {
-    name: "Gulf Of Mexico Costal Ocean Observing System",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/GCOOS-logo-01-landscape-colors-300x188.png",
-    link: "https://gcoos.org/",
-    width: "150",
-    height: "100",
-  },
-  {
-    name: "New Mexico State University",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/NMSU_NoU-Crimson-266x300.png",
-    link: "https://nmsu.edu/",
-    width: "80",
-    height: "100",
-  },
-  {
-    name: "Penn State University",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/PS_HOR_PMS_287_284-300x99.png",
-    link: "https://www.psu.edu/",
-    width: "190",
-    height: "70",
-  },
-
-  {
-    name: "University of Southern California",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/usc_logo_centered_RGB_G-300x147.png",
-    link: "https://sc.edu/",
-    width: "170",
-    height: "80",
-  },
-  {
-    name: "UC Davis",
-    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ucdavis_logo_blue-300x52.png",
-    link: "https://www.ucdavis.edu/",
-    width: "190",
-    height: "35",
   },
   {
     name: "Coastal Carolina University",
@@ -373,11 +294,81 @@ const PartnerList = [
     height: "90",
   },
   {
+    name: "Dauphin Island Sea Lab",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/DISL-centered-logo-Tag-300x183.png",
+    link: "https://www.disl.edu/",
+    width: "200",
+    height: "120",
+  },
+  {
+    name: "Gulf Of Mexico Costal Ocean Observing System",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/GCOOS-logo-01-landscape-colors-300x188.png",
+    link: "https://gcoos.org/",
+    width: "150",
+    height: "100",
+  },
+  {
+    name: "Jupiter Intelligence",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Jupiter_Logo_Color-300x86.png",
+    link: "https://www.jupiterintel.com/",
+    width: "190",
+    height: "50",
+  },
+  {
+    name: "New Mexico State University",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/NMSU_NoU-Crimson-266x300.png",
+    link: "https://nmsu.edu/",
+    width: "80",
+    height: "100",
+  },
+  {
+    name: "Oak Ridge National Laboratory",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ORNL-Two-line_green-300x72.png",
+    link: "https://www.ornl.gov/",
+    width: "190",
+    height: "50",
+  },
+  {
+    name: "Penn State University",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/PS_HOR_PMS_287_284-300x99.png",
+    link: "https://www.psu.edu/",
+    width: "190",
+    height: "70",
+  },
+  {
+    name: "RTI International",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/RTI_logo_rgb_1in-300x188.png",
+    link: "https://www.rti.org/centers/rti-center-water-resources",
+    width: "190",
+    height: "100",
+  },
+  {
+    name: "Stevens Institute Of Technology",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/Stevens-Primary-logo_4C-RGB-262x300.png",
+    link: "https://www.stevens.edu/",
+    width: "126",
+    height: "140",
+  },
+  {
+    name: "UC Davis",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/ucdavis_logo_blue-300x52.png",
+    link: "https://www.ucdavis.edu/",
+    width: "190",
+    height: "35",
+  },
+  {
     name: "University of Illinois Urbana-Champaign",
     logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/University-Wordmark-Full-Color-RGB-300x78.png",
     link: "https://illinois.edu/",
     width: "180",
     height: "50",
+  },
+  {
+    name: "University of Southern California",
+    logo: "https://ciroh.ua.edu/wp-content/uploads/2023/03/usc_logo_centered_RGB_G-300x147.png",
+    link: "https://sc.edu/",
+    width: "170",
+    height: "80",
   },
 ];
 
@@ -611,7 +602,12 @@ export default function HomepageFeatures() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
+  const sortedMembers = [...MemberList].sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
+  );
+  const sortedPartners = [...PartnerList].sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
+  );
 
   return (
     <>
@@ -735,7 +731,7 @@ export default function HomepageFeatures() {
                 {/* PRODUCTS */}
                 <div className="tw-text-center tw-p-6 tw-bg-white dark:tw-bg-slate-800 tw-rounded-2xl tw-shadow-lg hover:tw-shadow-xl tw-transition-shadow">
                   <div className="tw-text-4xl tw-font-bold tw-text-blue-700 dark:tw-text-cyan-300">
-                    {statsLoading ? "…" : stats.products}
+                    {statsLoading ? "..." : stats.products}
                   </div>
                   <div className="tw-mt-2 tw-text-sm tw-font-semibold tw-text-gray-700 dark:tw-text-gray-300">
                     PRODUCTS
@@ -745,7 +741,7 @@ export default function HomepageFeatures() {
                 {/* DATASETS */}
                 <div className="tw-text-center tw-p-6 tw-bg-white dark:tw-bg-slate-800 tw-rounded-2xl tw-shadow-lg hover:tw-shadow-xl tw-transition-shadow">
                   <div className="tw-text-4xl tw-font-bold tw-text-blue-700 dark:tw-text-cyan-300">
-                    {statsLoading ? "…" : stats.datasets}
+                    {statsLoading ? "..." : stats.datasets}
                   </div>
                   <div className="tw-mt-2 tw-text-sm tw-font-semibold tw-text-gray-700 dark:tw-text-gray-300">
                     DATASETS
@@ -755,7 +751,7 @@ export default function HomepageFeatures() {
                 {/* PRESENTATIONS */}
                 <div className="tw-text-center tw-p-6 tw-bg-white dark:tw-bg-slate-800 tw-rounded-2xl tw-shadow-lg hover:tw-shadow-xl tw-transition-shadow">
                   <div className="tw-text-4xl tw-font-bold tw-text-blue-700 dark:tw-text-cyan-300">
-                    {statsLoading ? "…" : stats.presentations}
+                    {statsLoading ? "..." : stats.presentations}
                   </div>
                   <div className="tw-mt-2 tw-text-sm tw-font-semibold tw-text-gray-700 dark:tw-text-gray-300">
                     PRESENTATIONS
@@ -769,7 +765,7 @@ export default function HomepageFeatures() {
   tw-col-span-2 md:tw-col-span-1 md:tw-col-start-2
 ">
                   <div className="tw-text-4xl tw-font-bold tw-text-blue-700 dark:tw-text-cyan-300">
-                    {statsLoading ? "…" : stats.courses}
+                    {statsLoading ? "..." : stats.courses}
                   </div>
                   <div className="tw-mt-2 tw-text-sm tw-font-semibold tw-text-gray-700 dark:tw-text-gray-300">
                     COURSES
@@ -911,10 +907,10 @@ export default function HomepageFeatures() {
                   </div>
 
                   <div className={`${styles.flexListContainer} tw-flex tw-flex-wrap tw-gap-4`}>
-                    {MemberList.map((member) => (
-                      <Link
-                        to={member.link}
-                        key={member.name}
+                  {sortedMembers.map((member) => (
+                    <Link
+                      to={member.link}
+                      key={member.name}
                         className={`${styles.imagewrapper} tw-bg-slate-100 dark:tw-bg-white tw-rounded-lg tw-p-4 tw-flex tw-items-center tw-justify-center tw-shadow-sm`}
                       >
                         <img
@@ -936,10 +932,10 @@ export default function HomepageFeatures() {
                   </div>
 
                   <div className={`${styles.flexListContainer} tw-flex tw-flex-wrap tw-gap-4`}>
-                    {PartnerList.map((partner) => (
-                      <Link
-                        to={partner.link}
-                        key={partner.name}
+                  {sortedPartners.map((partner) => (
+                    <Link
+                      to={partner.link}
+                      key={partner.name}
                         className={`${styles.imagewrapper} tw-bg-slate-100 dark:tw-bg-white tw-rounded-lg tw-p-4 tw-flex tw-items-center tw-justify-center tw-shadow-sm`}
                       >
                         <img

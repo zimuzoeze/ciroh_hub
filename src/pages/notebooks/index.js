@@ -57,18 +57,16 @@ function NoteBooksPageContent({ contributeUrl, docsUrl, defaultImage }) {
         <div className="tw-absolute tw-inset-0 tw-pointer-events-none tw-overflow-hidden" style={{ zIndex: 0 }}>
           <ConstellationCanvas isDarkTheme={isDarkTheme} />
         </div>
-      <div className="margin-top--lg">
-        <Header 
-            title="Notebooks" 
-            tagline="Python notebooks and other code combined with data resources and readme files to execute modeling workflows."
-            buttons={[
-                { label: "Add your Notebooks", href: contributeUrl, primary: true },
-                { label: "Browse Documentation", href: docsUrl }
-              ]}
-        />
-      </div>
-
-
+        <div className="margin-top--lg">
+            <Header 
+                title="Notebooks" 
+                tagline="Python notebooks and other code combined with data resources and readme files to execute modeling workflows."
+                buttons={[
+                    { label: "Add your Notebooks", href: contributeUrl, primary: true },
+                    { label: "Browse Documentation", href: docsUrl }
+                ]}
+            />
+        </div>
       </section>
 
       {/* Stats */}

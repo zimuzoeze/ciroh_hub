@@ -11,12 +11,10 @@ export default function Home() {
   return (
     <Layout title={siteConfig.title} description="CIROH Documentation Hub">
 
-      {/* CONSTELLATION BACKGROUND */}
-      <div className="tw-fixed tw-inset-0 tw-pointer-events-none" style={{ zIndex: 1 }}>
-        <ConstellationCanvas isDarkTheme={isDarkTheme} />
-      </div>
-
       <section className="tw-relative tw-z-20 tw-overflow-hidden tw-pb-8">
+        <div className="tw-fixed tw-inset-0 tw-pointer-events-none" style={{ zIndex: 1 }}>
+          <ConstellationCanvas isDarkTheme={isDarkTheme} />
+        </div>
         <div className="margin-top--lg">
           <Header
             title="CIROH Hub"
