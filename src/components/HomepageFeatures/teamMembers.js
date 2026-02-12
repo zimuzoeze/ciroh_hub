@@ -5,12 +5,6 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 const team = [
   {
-    name: "Arpita Patel",
-    role: "Assistant Director of DevOps and IT",
-    image: "/img/profiles/Arpita_Patel.png",
-    linkedin: "https://www.linkedin.com/in/arpita0911patel/"
-  },
-  {
     name: "Benjamin Lee",
     role: "DevOps Engineer",
     image: "/img/profiles/Ben_Lee.png",
