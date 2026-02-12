@@ -1,6 +1,6 @@
 .researcher-testimonials-section {
     padding: 60px 0;
-    background-color: var(--ifm-background-color);
+    /* background-color: var(--ifm-background-color); */
 }
 
 .researcher-testimonials-container {
@@ -44,7 +44,7 @@
     flex-direction: column;
     height: auto;
     max-height: none;
-    background-color: var(--ifm-card-background-color);
+    background-color: var(--bg-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.08);

@@ -35,7 +35,7 @@
    PROFILE CARD
 ================================= */
 .profile-card {
-  /* background: var(--ifm-card-background-color); */
+  background-color: var(--bg-card);
   border-radius: 22px;
   padding: 2.5rem 1.5rem 3rem;
   text-align: center;
