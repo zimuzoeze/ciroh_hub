@@ -2,6 +2,7 @@ import styles from "../styles.module.css";
 import "./cta-1.css";
 import "./cta-2.css";
 import Link from '@docusaurus/Link';
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 export default function OfficeHoursFeature() {
     return (
@@ -45,7 +46,7 @@ export default function OfficeHoursFeature() {
                     <img
                         className="tw-object-cover tw-object-center tw-rounded-2xl"
                         alt="hero"
-                        src="https://dummyimage.com/720x600/3b82f6/ffffff&text=Research"
+                        src={useBaseUrl("/img/graphics/office_hours.jpeg")}
                     />
                     </div>
 
