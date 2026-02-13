@@ -259,11 +259,6 @@ const config = {
                 // The sidebar loader is weirdly brittle. If a page is instantiated in "index.js", that must be specified explicitly.
                 {
                   type: "doc",
-                  docId: "products/intro",
-                  label: "Browse all resources...",
-                },
-                {
-                  type: "doc",
                   docId: "products/ngiab/index",
                   label: "NGIAB",
                 },
@@ -286,6 +281,11 @@ const config = {
                   type: "doc",
                   docId: "products/data-management/bigquery-api/index",
                   label: "NWM BigQuery API",
+                },
+                {
+                  type: "doc",
+                  docId: "products/intro",
+                  label: "Browse all documentation...",
                 },
               ],
             },
