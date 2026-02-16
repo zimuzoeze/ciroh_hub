@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import { useColorMode } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function Header({ title, tagline, description, buttons, notice }) {
   const { colorMode } = useColorMode();
@@ -104,10 +105,10 @@ export default function Header({ title, tagline, description, buttons, notice })
                 )}
               >
                 <img
-                  src={isDarkTheme ?  "img/logos/ciroh-dark.png" : "img/logos/ciroh-bgsafe.png" }
-                  alt="CIROH Logo"
-                  className="tw-w-48 sm:tw-w-56 lg:tw-w-64 tw-h-auto tw-drop-shadow-xl"
-                />
+                src={useBaseUrl(isDarkTheme ? "/img/logos/ciroh-dark.png" : "/img/logos/ciroh-bgsafe.png")}
+                alt="CIROH Logo"
+                className="tw-w-48 sm:tw-w-56 lg:tw-w-64 tw-h-auto tw-drop-shadow-xl"
+              />
               </div>
             </div>
           </div>
