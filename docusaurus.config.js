@@ -24,6 +24,14 @@ const config = {
     onBrokenMarkdownImages: "warn",
     githubProjectToken: process.env.GITHUB_PROJECT_TOKEN,
 
+    // Workaround to fix page highlighting in the
+    // product/documentation section.
+    // If a docs subfolder is listed here, its navbar entries
+    // will only be highlighted if the page is an exact match.
+    navbarReduceSubpageHighlights: [
+      "products",
+    ],
+
     // Workaround to add descriptive text to blog sidebars.
     // Supports any number of blogs.
     // 
@@ -132,9 +140,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
 
-        // gtag: process.env.NODE_ENV === 'production'
-        //   ? { trackingID: 'G-7KD31X6H62', anonymizeIP: true }
-        //   : undefined,
+        gtag: process.env.NODE_ENV === 'production'
+          ? { trackingID: 'G-WLZBZD1ST7', anonymizeIP: true }
+          : undefined,
         blog: false, // Blogs and its settings are now in the custom blog plugin below. Its because we have tags based filters in community impact page. Those filters are coming from Blog posts.
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
@@ -258,7 +266,6 @@ const config = {
             {
               label: "Documentation",
               position: "left",
-              href: "/docs/intro",
               items: [
                 // The sidebar loader is weirdly brittle. If a page is instantiated in "index.js", that must be specified explicitly.
                 {
@@ -452,3 +459,5 @@ const config = {
 };
 
 module.exports = config;
+
+

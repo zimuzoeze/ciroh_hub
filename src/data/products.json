@@ -46,7 +46,7 @@
       "iconUrl": "https://img.icons8.com/fluency/96/000000/geography.png",
       "links": {
         "github": "https://github.com/NOAA-OWP/hydrofabric",
-        "docs": "/docs/products/hydrofabric",
+        "docs": "/docs/products/Hydrofabric",
         "zotero": "https://www.nature.com/articles/s41597-025-05941-6"
       }
     },
@@ -78,7 +78,6 @@
       ],
       "iconUrl": "https://img.icons8.com/fluency/96/000000/analytics.png",
       "links": {
-        "github": "https://github.com/ciroh-ua/evaluation-tools",
         "docs": "/docs/products/evaluation"
       }
     },
@@ -138,10 +137,9 @@
         "Research",
         "Methodology"
       ],
-      "iconUrl": "https://img.icons8.com/fluency/96/000000/flood.png",
+      "iconUrl": "https://img.icons8.com/fluency/96/000000/tsunami.png",
       "links": {
-        "github": "https://github.com/sdmlua/FIMserv",
-        "docs": "/docs/products/portal/"
+        "github": "https://github.com/sdmlua/FIMserv"
       }
     },
     {
