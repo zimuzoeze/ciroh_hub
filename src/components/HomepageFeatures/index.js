@@ -17,8 +17,8 @@ export default function HomepageFeatures() {
         
         <ExploreFeature />
         <ResearchFeature />
-        <FeedbackFeature />
         <TeamGallery />
+        <FeedbackFeature />
         <TestimonialGallery />
         <OfficeHoursFeature />
         <OrgGallery />

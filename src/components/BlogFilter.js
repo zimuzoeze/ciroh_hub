@@ -145,7 +145,7 @@ export default function BlogFilter() {
         <header className={styles.hero}>
           <h2 className="tw-text-black dark:tw-text-white">
             Discover Our{' '}
-            <span className="tw-text-black dark:tw-text-cyan-300">Impact & Insights</span>
+            <span className="tw-text-black dark:tw-text-white">Impact & Insights</span>
           </h2>
           <p>
             To learn more about our projects and the impact we’re making, check out our blogs for in-depth insights,

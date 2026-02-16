@@ -17,7 +17,7 @@ export default function ResearcherTestimonials() {
 
                 <div className="researcher-grid">
                     {testimonialList.map((testimonial, index) => (
-                        <div key={index} className="researcher-card">
+                        <div key={index} className="researcher-card tw-bg-blue-50 dark:tw-bg-slate-900 ">
                             <div className="researcher-img-container">
                                 {testimonial.image ? (
 

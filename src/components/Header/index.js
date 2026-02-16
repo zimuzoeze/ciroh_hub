@@ -14,8 +14,8 @@ export default function Header({ title, tagline, description, buttons, notice })
       )}
     >
       {/* Content container */}
-      <div className="tw-relative tw-z-10 tw-mx-auto tw-max-w-7xl tw-px-4 sm:tw-px-6 lg:tw-px-8">
-         <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 md:tw-grid-cols-2 tw-gap-12 tw-items-center">
+      <div className="tw-relative tw-z-10 tw-mx-auto tw-max-w-7xl tw-px-4 sm:tw-px-6 lg:tw-px-16">
+        <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 md:tw-grid-cols-2 tw-gap-12 tw-items-center">
           <div className="tw-flex tw-flex-col tw-justify-center tw-order-2 md:tw-order-1 lg:tw-order-1">
             <div>
               <h1
@@ -87,7 +87,7 @@ export default function Header({ title, tagline, description, buttons, notice })
           </div>
 
           {/* RIGHT SIDE - LOGO */}
-          <div className="tw-flex tw-items-center tw-justify-center tw-order-1 md:tw-order-2 lg:tw-order-2">
+          <div className="tw-flex tw-items-center sm:tw-justify-end tw-justify-center tw-order-1 md:tw-order-2 lg:tw-order-2">
             <div className="tw-relative">
 
               {/* DROPLET GLOW */}
@@ -105,11 +105,11 @@ export default function Header({ title, tagline, description, buttons, notice })
               <div
                 className={clsx(
                   styles.logoBg,
-                  'tw-relative tw-w-72 tw-h-72 tw-rounded-full tw-flex tw-items-center tw-justify-center',
+                  'tw-relative tw-w-72 tw-h-72 tw-rounded-full tw-flex tw-items-center  sm:tw-justify-end tw-justify-center',
                 )}
               >
                 <img
-                  src={isDarkTheme ?  "img/logos/ciroh-dark.png" : "img/logos/ciroh-bgsafe.png" }
+                  src={isDarkTheme ? "img/logos/ciroh-dark.png" : "img/logos/ciroh-bgsafe.png"}
                   alt="CIROH Logo"
                   className="tw-w-48 sm:tw-w-56 lg:tw-w-64 tw-h-auto tw-drop-shadow-xl"
                 />

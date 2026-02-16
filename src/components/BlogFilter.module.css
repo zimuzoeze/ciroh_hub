@@ -46,13 +46,21 @@
     --placeholder: rgba(255, 255, 255, 0.55);
 }
 
-/* Light theme tweaks */
+/* Heading colors: black in light, white in dark */
 :global([data-theme='light']) .blogSection .hero h2 {
-  color: #1e40af !important;
+    color: #000000 !important;
 }
 
 :global([data-theme='light']) .blogSection .hero h2 span {
-  color: #1e40af !important;
+    color: #000000 !important;
+}
+
+:global([data-theme='dark']) .blogSection .hero h2 {
+    color: #ffffff !important;
+}
+
+:global([data-theme='dark']) .blogSection .hero h2 span {
+    color: #ffffff !important;
 }
 
 :global([data-theme='light']) .blogSection .cardImage::after {

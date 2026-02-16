@@ -85,9 +85,17 @@ const CardCarousel = ({ cards, header }) => {
     const offset = -(currentIndex * (100 / cardsPerView));
 
     return (
-        <div className="tw-w-full tw-relative tw-py-12">
+        <div className="tw-w-full tw-relative tw-py-12 tw-mb-4">
             {/* Header */}
             { header }
+
+            {/* Key Highlights Heading */}
+            <div className="tw-max-w-7xl tw-mx-auto tw-px-4">
+                <h2 className="tw-text-[2.3rem] tw-font-[800] tw-text-black dark:tw-text-white tw-text-center">
+                    Key Highlights
+                </h2>
+                <div className="tw-w-[70px] tw-h-1 tw-bg-[#19a7ce] tw-mx-auto tw-rounded-sm tw-mb-12"></div>
+            </div>
 
             {/* Carousel Container */}
             <div className="tw-relative tw-max-w-7xl tw-mx-auto tw-px-4 tw-bg-white dark:tw-bg-[#060010]">
@@ -212,7 +220,7 @@ const CardCarousel = ({ cards, header }) => {
                 </button>
 
                 {/* Navigation Dots */}
-                <div className="tw-flex tw-justify-center tw-gap-3 tw-mt-8">
+                {/* <div className="tw-flex tw-justify-center tw-gap-3 tw-mt-8">
                     {Array.from({ length: Math.ceil(cards.length / cardsPerView) }).map((_, i) => (
                         <button
                             key={i}
@@ -230,7 +238,7 @@ const CardCarousel = ({ cards, header }) => {
                             aria-current={i === currentIndex}
                         />
                     ))}
-                </div>
+                </div> */}
             </div>
         </div>
     );
