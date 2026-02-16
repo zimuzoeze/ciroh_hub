@@ -15,7 +15,7 @@ This document explains how DocuHub’s GitHub login works end-to-end: how users 
 ## Architecture overview
 
 **Frontend (Docusaurus site)**
-- Runs at `http://localhost:3000` in dev, or `https://docs.ciroh.org` in prod.
+- Runs at `http://localhost:3000` in dev, or `https://hub.ciroh.org` in prod.
 - Admin pages are static React routes under `/admin/*`.
 - Stores the DocuHub JWT in `localStorage`.
 
