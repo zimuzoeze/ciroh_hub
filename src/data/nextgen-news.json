@@ -1,5 +1,61 @@
 {
 
+	"February 2026 Update": [
+			{
+			"type": "NGIAB",
+			"title": "NGIAB-data-preprocess",
+			"links": [
+				"https://github.com/CIROH-UA/NGIAB_data_preprocess/releases/tag/v4.8.2",
+				"https://github.com/CIROH-UA/NGIAB_data_preprocess/releases/tag/v4.8.1",
+				"https://github.com/CIROH-UA/NGIAB_data_preprocess/releases/tag/v4.8.0",
+				"https://github.com/CIROH-UA/NGIAB_data_preprocess/releases/tag/v4.7.0"
+			],
+			"description":"New release of NGIAB data preprocess, [version v4.8.2](https://github.com/CIROH-UA/NGIAB_data_preprocess/releases/tag/v4.8.2), is now available which includes two major model integrations: [SUMMA](https://github.com/CH-Earth/summa) and [δHBV2](https://github.com/mhpi/dhbv2) (daily and hourly) in NGIAB data preprocessing workflows.", 
+			"release_date": "02/18/2026",
+			"contributors": 2
+			},
+			{
+			"type": "NGIAB",
+			"title": "🎉Differentiable HBV 2.0 (δHBV 2.0) and SUMMA integrated in NGIAB",
+			"link": "https://github.com/CIROH-UA/NGIAB-CloudInfra/releases/tag/v1.8.0",
+            "description": "[δHBV 2.0](https://github.com/mhpi/dhbv2) is a differentiable Hydrologiska Byråns Vattenbalansavdelning (HBV) model, using an LSTM and multilayer perceptron (MLP) to learn parameters. Both the hourly and daily variants are now integrated in the new release of NGIAB. This release also includes [SUMMA](https://github.com/CH-Earth/summa) integration along with the support for hourly and daily δHBV2 to enhance modeling capabilities.",
+            "release_date": "02/17/2026",
+			"contributors": 3
+			},			
+			{
+			"type": "NRDS",
+			"title": "ForcingProcessor",
+			"link": "",
+			"description":"",
+			"release_date": "",
+			"contributors": 0
+			},
+			{
+			"type": "NRDS",
+			"title": "DataStreamCLI",
+			"link": "",
+			"description":"",
+			"release_date": "",
+			"contributors": 0
+			},
+            {
+			"type": "NRDS",
+			"title": "Ngen-DataStream",
+			"link": "",
+			"description":" ",
+			"release_date": "",
+			"contributors": 0
+			},
+            {
+			"type": "NRDS",
+			"title": "NRDS Visualizer (nrds-client)",
+			"link": "",
+			"description":"",
+			"release_date": "",
+			"contributors": 0
+			}
+		],
+
 		"January 2026 Update": [
 			{
 			"type": "update",
