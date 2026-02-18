@@ -392,6 +392,11 @@
   display: block; /* Show dark image in dark mode */
 }
 
+/* Quick fix for KaTeX double-rendering */
+.katex-html {
+  display: none;
+}
+
 /* ----------------------------- */
 /* IMPORT TAILWIND LAST          */
 /* ----------------------------- */

@@ -44,6 +44,8 @@
     "react-player": "^2.16.0",
     "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.10.2",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "s": "^1.0.0",
     "three": "^0.181.2",
     "update": "^0.7.4",
