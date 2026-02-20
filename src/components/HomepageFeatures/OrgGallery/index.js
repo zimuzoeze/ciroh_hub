@@ -14,7 +14,7 @@ export default function OrgGallery() {
 
               {/* Consortium Sponsors */}
               <div className="tw-col tw-col--12 tw-mb-10">
-                <div className={`${styles.heading} tw-text-blue-800 dark:tw-text-white`}>
+                <div className={`${styles.heading} tw-text-black dark:tw-text-white`}>
                   Consortium Sponsors
                 </div>
 
@@ -42,7 +42,7 @@ export default function OrgGallery() {
 
                 {/* Members */}
                 <div>
-                  <div className={`${styles.heading} tw-text-blue-800 dark:tw-text-white`}>
+                  <div className={`${styles.heading} tw-text-black dark:tw-text-white`}>
                     Consortium Members
                   </div>
 
@@ -67,7 +67,7 @@ export default function OrgGallery() {
 
                 {/* Partners */}
                 <div>
-                  <div className={`${styles.heading} tw-text-blue-800 dark:tw-text-white`}>
+                  <div className={`${styles.heading} tw-text-black dark:tw-text-white`}>
                     Consortium Partners
                   </div>
 

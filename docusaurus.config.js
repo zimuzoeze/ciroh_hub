@@ -1,5 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import dotenv from 'dotenv';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 dotenv.config();
 
@@ -97,7 +99,7 @@ const config = {
     hs_logout_endpoint: "https://www.hydroshare.org/accounts/logout/",
     hs_logout_redirect: "https://portal.ciroh.org/contribute",
     // URL for submitting a new product request (used in ProductCards component)
-    productIssueUrl: "https://github.com/CIROH-UA/ciroh-ua_website/issues/new?template=product-request.md",
+    productIssueUrl: "https://github.com/CIROH-UA/ciroh_hub/issues/new?template=product-request.md",
 
     // Centralized external links used across pages/components
     externalLinks: {
@@ -106,7 +108,7 @@ const config = {
     },
 
     // Optional links for contribution CTAs
-    blogIdeaUrl: "https://github.com/CIROH-UA/ciroh-ua_website/issues/new?template=docuhub-blog-post.md",
+    blogIdeaUrl: "https://github.com/CIROH-UA/ciroh_hub/issues/new?template=docuhub-blog-post.md",
   },
 
   // GitHub pages deployment config.
@@ -146,9 +148,7 @@ const config = {
         blog: false, // Blogs and its settings are now in the custom blog plugin below. Its because we have tags based filters in community impact page. Those filters are coming from Blog posts.
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/CIROH-UA/ciroh-ua_website/edit/main/",
+          editUrl: "https://github.com/CIROH-UA/ciroh_hub/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -181,6 +181,8 @@ const config = {
         authorsMapPath: "authors.yaml", // Path to the authors' mapping file
         blogSidebarCount: "ALL",
         blogSidebarTitle: "CIROH Hub Blog",
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       }
     ],
 
@@ -224,7 +226,13 @@ const config = {
         },
         stylesheets: [
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css",
-          // ... other stylesheets
+          { // KaTeX CSS for math support
+            href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+            type: 'text/css',
+            integrity:
+              'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+            crossorigin: 'anonymous',
+          },
         ],
         navbar: {
           title: "CIROH Hub",

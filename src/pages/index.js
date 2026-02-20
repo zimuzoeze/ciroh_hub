@@ -9,9 +9,9 @@ export default function Home() {
   const { siteConfig, isDarkTheme } = useDocusaurusContext();
 
   return (
-    <Layout title={siteConfig.title} description="CIROH Documentation Hub">
+    <Layout title={siteConfig.title} description="CIROH Hub">
 
-      <section className="tw-relative tw-z-20 tw-overflow-hidden tw-pb-8">
+      <section className="tw-relative tw-z-20 tw-overflow-hidden tw-pb-8 sm:tw-pt-12">
         <div className="tw-fixed tw-inset-0 tw-pointer-events-none" style={{ zIndex: 1 }}>
           <ConstellationCanvas isDarkTheme={isDarkTheme} />
         </div>

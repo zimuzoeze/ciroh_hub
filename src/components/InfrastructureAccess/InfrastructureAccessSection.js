@@ -80,7 +80,8 @@ const InfrastructureAccessSection = ({
     },
     button: {
       primary: {
-        bg: isDark ? '#06b6d4' : '#0891b2',
+        bg: 'var(--ciroh-button-primary-bg)',
+        text: '#ffffff',
       },
       secondary: {
         text: isDark ? '#06b6d4' : '#0891b2',
@@ -166,7 +167,7 @@ const InfrastructureAccessSection = ({
                           href={button.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: theme.button.primary.bg, color: 'white', fontSize: '1rem', fontWeight: 500, border: 'none', borderRadius: '0.5rem', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none' }}
+                          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: theme.button.primary.bg, color: theme.button.primary.text, fontSize: '1rem', fontWeight: 500, border: 'none', borderRadius: '0.5rem', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none' }}
                         >
                           {button.text}
                           <ExternalLink size={18} />

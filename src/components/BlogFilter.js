@@ -38,7 +38,7 @@ export default function BlogFilter() {
       const category = tagToCategory(tag?.label);
       if (category) return category;
     }
-    return 'conference';
+    return 'unknown';
   };
 
   const filteredPosts = useMemo(() => {
@@ -143,9 +143,9 @@ export default function BlogFilter() {
 
       <div className={styles.main}>
         <header className={styles.hero}>
-          <h2 className="tw-text-blue-800 dark:tw-text-white">
+          <h2 className="tw-text-black dark:tw-text-white">
             Discover Our{' '}
-            <span className="tw-text-blue-800 dark:tw-text-cyan-400">Impact & Insights</span>
+            <span className="tw-text-black dark:tw-text-white">Impact & Insights</span>
           </h2>
           <p>
             To learn more about our projects and the impact we’re making, check out our blogs for in-depth insights,

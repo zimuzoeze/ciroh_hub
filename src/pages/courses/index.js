@@ -71,7 +71,7 @@ function CoursesPageContent({ contributeUrl, docsUrl }) {
             title="Courses" 
             tagline="Access a range of open courses in hydrology, enriched with CIROH and NOAA research, designed for learners at all levels seeking to deepen their understanding of water science."
             buttons={[
-                { label: "Add your Apps", href: contributeUrl, primary: true },
+                { label: "Add your Courses", href: contributeUrl, primary: true },
                 { label: "Browse Documentation", href: docsUrl }
               ]}
         />

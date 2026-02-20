@@ -179,10 +179,10 @@ export default function CloudInfraDashboard({ cards = [] }) {
 
                 <div className="header">
                     <h1 className="tw-text-4xl tw-font-extrabold tw-text-center tw-mb-6
-                tw-text-blue-800 dark:tw-text-white">
+                tw-text-black dark:tw-text-white">
                 Cloud Infrastructure
             </h1>
-                    <p className="tw-text-blue-700 dark:tw-text-white">Real-time metrics across all platforms</p>
+                    <p className="tw-text-gray-700 dark:tw-text-white">Real-time metrics across all platforms</p>
                 </div>
 
                 <div className="cards-grid">

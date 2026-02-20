@@ -118,9 +118,7 @@ const InfrastructureNavigator = () => {
           const buttonStyle = {
             ...buttonBaseStyle,
             background: isActive
-              ? isDark
-                ? 'linear-gradient(135deg, #06b6d4 0%, #2563eb 100%)'
-                : 'linear-gradient(135deg, #0891b2 0%, #1d4ed8 100%)'
+              ? 'var(--ciroh-button-primary-bg)'
               : isDark 
                 ? 'rgba(58, 58, 58, 0.6)' 
                 : 'rgba(255, 255, 255, 0.8)',

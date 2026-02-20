@@ -9,8 +9,12 @@
 .pageTitle {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--ifm-color-primary);
+  color: #000000;
   margin: 0 0 1rem 0;
+}
+
+[data-theme='dark'] .pageTitle {
+  color: #ffffff;
 }
 
 .pageSubtitle {
