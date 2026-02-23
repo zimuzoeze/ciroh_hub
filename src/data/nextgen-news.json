@@ -46,18 +46,18 @@
 			{
 			"type": "NRDS",
 			"title": "DataStreamCLI",
-			"link": "",
-			"description":"",
-			"release_date": "",
-			"contributors": 0
+			"link": "https://github.com/CIROH-UA/datastreamcli/releases/tag/v1.5.0",
+			"description":"DataStreamCLI has undergone major new additions. Learn more about the latest updates.",
+			"release_date": "02/20/2026",
+			"contributors": 3
 			},
             {
 			"type": "NRDS",
 			"title": "Ngen-DataStream",
-			"link": "",
-			"description":" ",
-			"release_date": "",
-			"contributors": 0
+			"link": "https://github.com/CIROH-UA/ngen-datastream/releases/tag/v2.2.0",
+			"description":"As documented in the [NRDS status page](https://github.com/CIROH-UA/ngen-datastream/blob/main/docs/nrds/STATUS_AND_METADATA.md), LSTM_0 datastream has been manually deployed. ",
+			"release_date": "02/20/2026",
+			"contributors": 2
 			},
             {
 			"type": "NRDS",
@@ -79,7 +79,7 @@
 			"type": "update",
 			"title": "CIROH 2i2c JupyterHub",
 			"link": "https://github.com/CIROH-UA/awi-ciroh-image/releases/tag/v1.2.2",
-			"description":"CIROH 2i2c JupyterHub image has been updated to the latest dask version.",
+			"description":"Default pangeo image, along with CIROH Community NextGen Hub image, has been updated to the latest dask version.",
 			"release_date": "02/10/2026",
 			"contributors": 2
 			},
