@@ -266,6 +266,7 @@ const config = {
             {
               label: "Documentation",
               position: "left",
+              to: "/docs/products/intro",
               items: [
                 // The sidebar loader is weirdly brittle. If a page is instantiated in "index.js", that must be specified explicitly.
                 {
