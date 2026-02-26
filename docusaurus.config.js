@@ -24,7 +24,7 @@ const config = {
       'https://67h5z9ih7j.execute-api.us-east-1.amazonaws.com/default',
     onBrokenMarkdownLinks: "warn",
     onBrokenMarkdownImages: "warn",
-    githubProjectToken: process.env.GITHUB_PROJECT_TOKEN,
+    githubProjectToken: process.env.GH_PROJECT_TOKEN,
 
     // Workaround to fix page highlighting in the
     // product/documentation section.
