@@ -3,6 +3,7 @@ import React, {
     cloneElement,
     forwardRef,
     isValidElement,
+    useState,
     useEffect,
     useMemo,
     useRef
@@ -53,6 +54,10 @@ const CardSwap = ({
     height = 400,
     cardDistance = 60,
     verticalDistance = 70,
+    mobileWidth = 320,
+    mobileHeight = 260,
+    mobileCardDistance = 28,
+    mobileVerticalDistance = 30,
     delay = 5000,
     pauseOnHover = false,
     onCardClick,
@@ -60,13 +65,23 @@ const CardSwap = ({
     easing = 'elastic',
     children
 }) => {
-    const [isMobile, setIsMobile] = React.useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     // Adjust dimensions for mobile
-    const responsiveWidth = isMobile ? 320 : width;
-    const responsiveHeight = isMobile ? 260 : height;
-    const responsiveCardDistance = isMobile ? 28 : cardDistance;
-    const responsiveVerticalDistance = isMobile ? 30 : verticalDistance;
+    const {
+        responsiveWidth,
+        responsiveHeight,
+        responsiveCardDistance,
+        responsiveVerticalDistance,
+    } = useMemo(
+        () => ({
+            responsiveWidth: isMobile ? mobileWidth : width,
+            responsiveHeight: isMobile ? mobileHeight : height,
+            responsiveCardDistance: isMobile ? mobileCardDistance : cardDistance,
+            responsiveVerticalDistance: isMobile ? mobileVerticalDistance : verticalDistance,
+        }),
+        [isMobile]
+    )
 
     React.useEffect(() => {
         const checkMobile = () => {
