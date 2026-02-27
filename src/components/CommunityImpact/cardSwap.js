@@ -10,6 +10,8 @@ import React, {
 } from 'react';
 import gsap from 'gsap';
 
+const TW_LG = 1024; // Tailwind responsive breakpoint, in px
+
 export const Card = forwardRef(({ customClass, ...rest }, ref) => (
     <div
         ref={ref}
@@ -17,8 +19,8 @@ export const Card = forwardRef(({ customClass, ...rest }, ref) => (
         className={`
       tw-absolute tw-top-1/2 tw-left-1/2
       tw-rounded-xl tw-outline tw-border-2 tw-border-white tw-outline-white tw-bg-slate-900 tw-text-white
-      tw-p-10 md:tw-p-10 sm:tw-p-6 max-[480px]:tw-p-4
-      tw-text-sm md:tw-text-base
+      tw-p-6 lg:tw-p-10
+      tw-text-base
       [transform-style:preserve-3d]
       [will-change:transform]
       [backface-visibility:hidden]
@@ -85,7 +87,7 @@ const CardSwap = ({
 
     React.useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < TW_LG);
         };
 
         checkMobile();
@@ -240,8 +242,7 @@ const CardSwap = ({
                 ref={container}
                 className="
           tw-relative tw-origin-bottom tw-overflow-visible
-          tw-scale-[0.82] md:tw-scale-100
-          max-[480px]:tw-scale-[0.64]
+          tw-scale-[0.64] lg:tw-scale-100
         "
                 style={{ width: responsiveWidth, height: responsiveHeight }}
             >
